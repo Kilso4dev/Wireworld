@@ -29,12 +29,6 @@ public class Window extends JFrame {
 
         this.setDefaultCloseOperation(Window.EXIT_ON_CLOSE);
         this.setSize(new Dimension((Toolkit.getDefaultToolkit().getScreenSize().width / 2), (Toolkit.getDefaultToolkit().getScreenSize().height / 2)));
-  private final String[] menuEntries = {
-            "Conductor",
-            "Electron",
-            "Delete",
-            "Start"
-    };
         initializeWindowMenu();
 
         gameGUI = JGamePanel.create();
