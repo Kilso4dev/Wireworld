@@ -1,7 +1,6 @@
 package core;
 
 import exceptions.OrientationException;
-import javafx.geometry.Orientation;
 
 import java.util.ArrayList;
 
@@ -12,6 +11,12 @@ public class GameField {
 
     private GameField() {
         fieldCoordinates  = new byte[10][10];
+        //TODO
+        for (int i = 0; i < fieldCoordinates.length; i++) {
+            for (int j = 0; j < fieldCoordinates[i].length; j++) {
+                fieldCoordinates[i][j] = (byte)Math.round(Math.random() * 3);
+            }
+        }
     }
 
     public static GameField create() {

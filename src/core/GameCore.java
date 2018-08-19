@@ -7,17 +7,18 @@ import java.awt.*;
 
 public class GameCore extends Thread {
     static final long SEC_IN_NANO = (long)1e9;
-    static final int GAME_FPS = 200;
+    static final int GAME_FPS = 30;
 
     private boolean running = false, finalize = false;
-    private int fpsCounter;
+    protected int fpsCounter;
 
     private int maxAreaWidth;
 
-    Window gameWindow;
-    GameField gameField;
+    protected Window gameWindow;
+    protected GameField gameField;
+    protected GameMechanics gameMechanics;
 
-    InputHandler input;
+    protected InputHandler input;
 
     private GameCore(String[] args) {
         if (args.length >= 1) {
@@ -80,17 +81,23 @@ public class GameCore extends Thread {
     private void init() {
         gameWindow.setVisible(true);
     }
+    public void toggleLoop() {
+        running = !running;
+    }
     public void pause() {
         running = false;
     }
     public void restart() {
         running = true;
     }
-
+    public void closeGame() {
+        finalize = true;
+    }
 
 
     public void tick() {
-
+        System.out.println("Gameloop working:\n");
+        gameMechanics.loop();
     }
 
     public void render() {

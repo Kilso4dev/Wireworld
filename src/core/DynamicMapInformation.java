@@ -14,4 +14,15 @@ public class DynamicMapInformation {
         return new DynamicMapInformation();
     }
 
+
+    public synchronized void setRenderOrigin() {
+
+    }
+
+    public synchronized void setMousePosition() {
+    }
+
+    public synchronized void setScaleByMouseRotation() {
+
+    }
 }
